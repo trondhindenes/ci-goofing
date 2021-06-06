@@ -4,9 +4,16 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    container:
+      image: gittools/gitversion
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: generate appversion.json
+        run: /tools/dotnet-gitversion > appversion.json
+      - run: echo appversion.json
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "github.sha ${{ github.sha }}"
       - run: echo "github.ref ${{ github.ref }}"
