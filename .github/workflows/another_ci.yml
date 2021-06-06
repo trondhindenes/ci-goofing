@@ -3,6 +3,8 @@ on:
   workflow_run:
     workflows:
       - stuff
+    branches:
+      - main
     types: 
       - completed
 jobs:
