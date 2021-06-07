@@ -14,4 +14,5 @@ jobs:
           #check-name: test # name of the existing check - omit to wait for all checks
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 20
+          running-workflow-name: 'the-other-stuff'
       - run: echo "github.sha ${{ github.sha }}"
