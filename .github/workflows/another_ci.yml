@@ -2,7 +2,7 @@ name: the-other-stuff
 on:
   push:
 jobs:
-  ci:
+  another-ci-again:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -14,5 +14,6 @@ jobs:
           #check-name: test # name of the existing check - omit to wait for all checks
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 20
-          running-workflow-name: 'ci'
+          #running-workflow-name: 'ci'
+          check-name: ci
       - run: echo "github.sha ${{ github.sha }}"

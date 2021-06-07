@@ -2,7 +2,7 @@ name: always-failing
 on:
   - push
 jobs:
-  ci:
+  ci-copy:
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
