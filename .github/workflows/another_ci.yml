@@ -10,7 +10,7 @@ jobs:
       - name: Wait on tests
         uses: lewagon/wait-on-check-action@v0.2
         with:
-          ref: ${{ github.sha }}"
+          ref: ${{ github.ref }}
           #check-name: test # name of the existing check - omit to wait for all checks
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 20
